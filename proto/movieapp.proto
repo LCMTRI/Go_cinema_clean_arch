@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+option go_package = "./";
+
+package test;
+import "google/protobuf/timestamp.proto";
+
+service ComputeService {
+    rpc GetUsers (Empty) returns (stream UserInfoRes);
+    rpc GetUser (Id) returns (UserInfoRes);
+    rpc CreateUser (UserInfoReq) returns (Id);
+    rpc UpdateUser (UserInfoReq) returns (Status);
+    rpc DeleteUser (Id) returns (Status);
+
+    rpc GetMovies (Empty) returns (stream MovieInfoRes);
+    rpc GetMovie (Id) returns (MovieInfoRes);
+    rpc CreateMovie (MovieInfoReq) returns (Id);
+    rpc UpdateMovie (MovieInfoReq) returns (Status);
+    rpc DeleteMovie (Id) returns (Status);
+
+    rpc GetWatchedMoviesUser (MovieList) returns (stream MovieInfoRes);
+    rpc GetWatchedMoviesGateway (Id) returns (MovieInfoList);
+}
+
+message Empty {}
+
+message MovieInfoReq {
+    string code = 1;
+    string isbn = 2;
+    string title = 3;
+    Director director = 4;
+    google.protobuf.Timestamp      UpdatedAt=5;
+    google.protobuf.Timestamp      CreatedAt=6;
+}
+
+message MovieInfoRes {
+    string id = 1;
+    string code = 2;
+    string isbn = 3;
+    string title = 4;
+    Director director = 5;
+    google.protobuf.Timestamp      UpdatedAt=6;
+    google.protobuf.Timestamp      CreatedAt=7;
+}
+
+message Director {
+    string firstname = 1;
+    string lastname = 2;
+}
+
+message UserInfoReq {
+    string code = 1;
+    string name = 2;
+    string email = 3;
+    string password = 4;
+    repeated string watched_movies = 5;
+    google.protobuf.Timestamp      UpdatedAt=6;
+    google.protobuf.Timestamp      CreatedAt=7;
+}
+
+message UserInfoRes {
+    string id = 1;
+    string code = 2;
+    string name = 3;
+    string email = 4;
+    string password = 5;
+    repeated string watched_movies = 6;
+    google.protobuf.Timestamp      UpdatedAt=7;
+    google.protobuf.Timestamp      CreatedAt=8;
+}
+
+message MovieList {
+    repeated string watched_movies = 5;
+}
+
+message MovieInfoList {
+    repeated MovieInfoRes watched_movies = 5;
+}
+
+message Id {
+    string value = 1;
+}
+
+message Status {
+    int32 value = 1;
+}
