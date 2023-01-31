@@ -17,8 +17,6 @@ import (
 	"Go_cinema_reconstructed/model"
 	transform "Go_cinema_reconstructed/model/data_transform"
 	pb "Go_cinema_reconstructed/proto"
-
-	// u_pb "Go_cinema_reconstructed/user/proto"
 	"context"
 	"encoding/json"
 
@@ -27,8 +25,6 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-
-	//"strconv"
 	"time"
 
 	"github.com/labstack/echo/v4"
@@ -156,19 +152,6 @@ func deleteUser(c echo.Context) error {
 		return c.String(http.StatusNotFound, "Can't find the User with the given id")
 	}
 }
-
-// func getWatchedMovies(c echo.Context) error {
-// 	userId := c.Param("id")
-// 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
-// 	defer cancel()
-// 	req := &pb.Id{Value: userId}
-// 	res, err := clientUser.GetWatchedMoviesGateway(ctx, req)
-// 	if err != nil {
-// 		return c.JSON(http.StatusNotFound, "Can't find the User with the given id")
-// 	}
-// 	json.NewEncoder(c.Response().Writer).Encode(res.WatchedMovies)
-// 	return c.String(http.StatusOK, "")
-// }
 
 // for Movie
 func getAllMovies(c echo.Context) error {
@@ -314,7 +297,6 @@ func main() {
 	e.POST("/users", addUser)
 	e.PUT("/users/:id", updateUser)
 	e.DELETE("/users/:id", deleteUser)
-	// e.GET("/users/:id/watched_movies", getWatchedMovies)
 
 	e.GET("/movies", getAllMovies)
 	e.GET("/movies/:id", getMovie)

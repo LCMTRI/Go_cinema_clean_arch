@@ -5,28 +5,12 @@ import (
 	"Go_cinema_reconstructed/gateway/route"
 	pb "Go_cinema_reconstructed/proto"
 
-	//"Go_cinema_reconstructed/gateway/route"
 	"fmt"
-
-	// movie_handler "Go_cinema_reconstructed/movie/handler"
-	// movie_repo "Go_cinema_reconstructed/movie/repository"
-	// movie_usecase "Go_cinema_reconstructed/movie/usecase"
-	// movie_pb "Go_cinema_reconstructed/movie/proto"
-	// user_handler "Go_cinema_reconstructed/user/handler"
-	// user_repo "Go_cinema_reconstructed/user/repository"
-	// user_usecase "Go_cinema_reconstructed/user/usecase"
-
-	//"context"
 	"log"
-	//"os"
-	//"os/signal"
-	//"time"
 
 	"github.com/labstack/echo/v4"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
-	// "go.mongodb.org/mongo-driver/mongo"
-	// "go.mongodb.org/mongo-driver/mongo/options"
 )
 
 func main() {
@@ -47,7 +31,7 @@ func main() {
 	defer connMovie.Close()
 	clientMovie := pb.NewComputeServiceClient(connMovie)
 	fmt.Println("Welcom to Movie gRPC Server")
-	
+
 	e := echo.New()
 	handler := gw_handler.NewGatewayHandler(clientMovie, clientUser)
 

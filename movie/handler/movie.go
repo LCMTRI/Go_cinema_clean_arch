@@ -63,7 +63,7 @@ func (h *MovieHandler) GetMovie(ctx context.Context, in *pb.Id) (*pb.MovieInfoRe
 
 	movie, err := h.m.GetMovieByID(in.Value)
 	if err != nil {
-		log.Println("err here!")
+		log.Printf("Handler err: %v\n", err)
 		return nil, err
 	}
 

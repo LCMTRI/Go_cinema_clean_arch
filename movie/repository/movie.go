@@ -3,6 +3,7 @@ package repo
 import (
 	"Go_cinema_reconstructed/model"
 	"context"
+	"log"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -38,11 +39,16 @@ func (m *movieRepo) GetAll() ([]*model.MovieRes, error) {
 func (m *movieRepo) GetByID(movieID string) (*model.MovieRes, error) {
 	resp := new(model.MovieRes)
 	err := m.coll.FindOne(ctx, bson.M{"movie_id": movieID}).Decode(resp)
+	if err != nil {
+		log.Println(err)
+	}
 	return resp, err
 }
 
 func (m *movieRepo) Create(mInsert *model.MovieReq) error {
-	// movie := &model.MovieReq{
+	_, err := m.coll.InsertOne(ctx, mInsert)
+	// movie := &model.MovieRes{
+	// 	ID:        add.InsertedID.(primitive.ObjectID).Hex(),
 	// 	MovieID:   mInsert.MovieID,
 	// 	Isbn:      mInsert.Isbn,
 	// 	Title:     mInsert.Title,
@@ -50,7 +56,6 @@ func (m *movieRepo) Create(mInsert *model.MovieReq) error {
 	// 	CreatedAt: mInsert.CreatedAt,
 	// 	UpdatedAt: mInsert.UpdatedAt,
 	// }
-	_, err := m.coll.InsertOne(ctx, mInsert)
 	return err
 }
 

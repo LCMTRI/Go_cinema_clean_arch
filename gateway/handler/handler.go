@@ -90,7 +90,7 @@ func (h *GatewayHandler) GetMovie(c echo.Context) error {
 	req := &pb.Id{Value: movieId}
 	res, err := h.clientMovie.GetMovie(ctx, req)
 	if err != nil {
-		log.Fatalf("%v.GetMovies(_) = _, %v", h.clientMovie, err)
+		log.Printf("%v.GetMovies(_) = _, %v", h.clientMovie, err)
 	}
 
 	if res != nil {

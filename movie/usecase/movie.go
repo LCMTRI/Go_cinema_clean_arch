@@ -3,11 +3,7 @@ package usecase
 import (
 	"Go_cinema_reconstructed/model"
 	"time"
-	//"time"
 )
-
-// type MovieRepository interface {
-// }
 
 type movieUsecase struct {
 	mRepo model.MovieRepository
