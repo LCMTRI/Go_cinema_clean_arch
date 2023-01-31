@@ -14,11 +14,11 @@
 package main
 
 import (
-	"Go_cinema_reconstructed/model"
-	transform "Go_cinema_reconstructed/model/data_transform"
-	pb "Go_cinema_reconstructed/proto"
+	"Go_cinema_clean_arch/model"
+	transform "Go_cinema_clean_arch/model/data_transform"
+	pb "Go_cinema_clean_arch/proto"
 
-	// u_pb "Go_cinema_reconstructed/user/proto"
+	// u_pb "Go_cinema_clean_arch/user/proto"
 	"context"
 	"encoding/json"
 

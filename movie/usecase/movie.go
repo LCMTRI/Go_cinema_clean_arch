@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"Go_cinema_reconstructed/model"
+	"Go_cinema_clean_arch/model"
 	"time"
 	//"time"
 )

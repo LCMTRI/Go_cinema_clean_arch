@@ -1,10 +1,10 @@
 package main
 
 import (
-	pb "Go_cinema_reconstructed/proto"
-	user_handler "Go_cinema_reconstructed/user/handler"
-	user_repo "Go_cinema_reconstructed/user/repository"
-	user_usecase "Go_cinema_reconstructed/user/usecase"
+	pb "Go_cinema_clean_arch/proto"
+	user_handler "Go_cinema_clean_arch/user/handler"
+	user_repo "Go_cinema_clean_arch/user/repository"
+	user_usecase "Go_cinema_clean_arch/user/usecase"
 	"context"
 	"fmt"
 

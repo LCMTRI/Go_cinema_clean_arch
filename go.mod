@@ -1,4 +1,4 @@
-module Go_cinema_reconstructed
+module Go_cinema_clean_arch
 
 go 1.18
 

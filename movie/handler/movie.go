@@ -1,9 +1,9 @@
 package handler
 
 import (
-	"Go_cinema_reconstructed/model"
-	transform "Go_cinema_reconstructed/model/data_transform"
-	pb "Go_cinema_reconstructed/proto"
+	"Go_cinema_clean_arch/model"
+	transform "Go_cinema_clean_arch/model/data_transform"
+	pb "Go_cinema_clean_arch/proto"
 	"context"
 	"log"
 

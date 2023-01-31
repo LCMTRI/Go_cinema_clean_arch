@@ -5,7 +5,7 @@ An implementation of [clean architecture](https://blog.cleancoder.com/uncle-bob/
 ## System architecture:
 
 <p align="center">
-    <img alt="diagram" src="https://github.com/LCMTRI/Go_cinema_clean_arch/blob/main/go_cinema_clean_arch.jpg" width="70%">
+    <img alt="diagram" src="https://github.com/LCMTRI/Go_cinema_clean_arch/blob/main/go_cinema_clean_arch.jpg" width="100%">
 </p>
 
 ## Run

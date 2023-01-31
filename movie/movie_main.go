@@ -1,9 +1,9 @@
 package main
 
 import (
-	movie_handler "Go_cinema_reconstructed/movie/handler"
-	movie_repo "Go_cinema_reconstructed/movie/repository"
-	movie_usecase "Go_cinema_reconstructed/movie/usecase"
+	movie_handler "Go_cinema_clean_arch/movie/handler"
+	movie_repo "Go_cinema_clean_arch/movie/repository"
+	movie_usecase "Go_cinema_clean_arch/movie/usecase"
 	"context"
 
 	"log"

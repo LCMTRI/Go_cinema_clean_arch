@@ -1,8 +1,8 @@
 package route
 
 import (
-	gw_handler "Go_cinema_reconstructed/gateway/handler"
-	// movie_pb "Go_cinema_reconstructed/movie/proto"
+	gw_handler "Go_cinema_clean_arch/gateway/handler"
+	// movie_pb "Go_cinema_clean_arch/movie/proto"
 
 	"github.com/labstack/echo/v4"
 	"google.golang.org/grpc"

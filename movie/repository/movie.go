@@ -1,7 +1,7 @@
 package repo
 
 import (
-	"Go_cinema_reconstructed/model"
+	"Go_cinema_clean_arch/model"
 	"context"
 
 	"go.mongodb.org/mongo-driver/bson"

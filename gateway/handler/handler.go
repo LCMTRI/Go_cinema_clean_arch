@@ -1,15 +1,15 @@
 package gw_handler
 
 import (
-	//m_handler "Go_cinema_reconstructed/movie/handler"
-	//u_handler "Go_cinema_reconstructed/user/handler"
+	//m_handler "Go_cinema_clean_arch/movie/handler"
+	//u_handler "Go_cinema_clean_arch/user/handler"
 
-	"Go_cinema_reconstructed/model"
-	transform "Go_cinema_reconstructed/model/data_transform"
+	"Go_cinema_clean_arch/model"
+	transform "Go_cinema_clean_arch/model/data_transform"
 
-	//u_handler "Go_cinema_reconstructed/user/handler"
-	pb "Go_cinema_reconstructed/proto"
-	//u_pb "Go_cinema_reconstructed/user/proto"
+	//u_handler "Go_cinema_clean_arch/user/handler"
+	pb "Go_cinema_clean_arch/proto"
+	//u_pb "Go_cinema_clean_arch/user/proto"
 	"context"
 	"encoding/json"
 	"io"

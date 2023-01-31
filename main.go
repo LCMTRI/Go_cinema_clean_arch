@@ -1,20 +1,20 @@
 package main
 
 import (
-	gw_handler "Go_cinema_reconstructed/gateway/handler"
-	"Go_cinema_reconstructed/gateway/route"
-	pb "Go_cinema_reconstructed/proto"
+	gw_handler "Go_cinema_clean_arch/gateway/handler"
+	"Go_cinema_clean_arch/gateway/route"
+	pb "Go_cinema_clean_arch/proto"
 
-	//"Go_cinema_reconstructed/gateway/route"
+	//"Go_cinema_clean_arch/gateway/route"
 	"fmt"
 
-	// movie_handler "Go_cinema_reconstructed/movie/handler"
-	// movie_repo "Go_cinema_reconstructed/movie/repository"
-	// movie_usecase "Go_cinema_reconstructed/movie/usecase"
-	// movie_pb "Go_cinema_reconstructed/movie/proto"
-	// user_handler "Go_cinema_reconstructed/user/handler"
-	// user_repo "Go_cinema_reconstructed/user/repository"
-	// user_usecase "Go_cinema_reconstructed/user/usecase"
+	// movie_handler "Go_cinema_clean_arch/movie/handler"
+	// movie_repo "Go_cinema_clean_arch/movie/repository"
+	// movie_usecase "Go_cinema_clean_arch/movie/usecase"
+	// movie_pb "Go_cinema_clean_arch/movie/proto"
+	// user_handler "Go_cinema_clean_arch/user/handler"
+	// user_repo "Go_cinema_clean_arch/user/repository"
+	// user_usecase "Go_cinema_clean_arch/user/usecase"
 
 	//"context"
 	"log"
@@ -47,7 +47,7 @@ func main() {
 	defer connMovie.Close()
 	clientMovie := pb.NewComputeServiceClient(connMovie)
 	fmt.Println("Welcom to Movie gRPC Server")
-	
+
 	e := echo.New()
 	handler := gw_handler.NewGatewayHandler(clientMovie, clientUser)
 

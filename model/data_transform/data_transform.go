@@ -1,10 +1,10 @@
 package transform
 
 import (
-	"Go_cinema_reconstructed/model"
-	pb "Go_cinema_reconstructed/proto"
+	"Go_cinema_clean_arch/model"
+	pb "Go_cinema_clean_arch/proto"
 
-	// u_pb "Go_cinema_reconstructed/user/proto"
+	// u_pb "Go_cinema_clean_arch/user/proto"
 	"time"
 
 	google_protobuf "github.com/golang/protobuf/ptypes/timestamp"
